@@ -177,3 +177,6 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi-V1-ndk.vendor:64 \
     com.google.hardware.pixel.display-V4-ndk.vendor:64 \
     com.google.hardware.pixel.display-V9-ndk.vendor
+
+# PixelParts
+include packages/apps/PixelParts/device.mk
