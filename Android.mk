@@ -36,25 +36,3 @@ $(eval $(call declare-copy-files-license-metadata,device/google/raviole,wpa_supp
 $(eval $(call declare-copy-files-license-metadata,device/google/raviole,wpa_supplicant_overlay.conf,SPDX-license-identifier-Apache-2.0,notice,build/soong/licenses/LICENSE,))
 
 $(eval $(call declare-1p-copy-files,device/google/raviole,audio_policy_configuration.xml))
-
-# if some modules are built directly from this directory (not subdirectories),
-# their rules should be written here.
-
-ifeq ($(USES_DEVICE_GOOGLE_RAVIOLE),true)
-DM_LIBS := libdmengine.so libdmjavaplugin.so
-DM_32_SYMLINKS := $(addprefix $(TARGET_OUT_PRODUCT)/priv-app/DMService/lib/arm/,$(notdir $(DM_LIBS)))
-$(DM_32_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "DMService 32 lib link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /product/lib/$(notdir $@) $@
-
-DM_64_SYMLINKS := $(addprefix $(TARGET_OUT_PRODUCT)/priv-app/DMService/lib/arm64/,$(notdir $(DM_LIBS)))
-$(DM_64_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "DMService 64 lib link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /product/lib64/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(DM_32_SYMLINKS) $(DM_64_SYMLINKS) $(HBM_SYMLINKS)
-endif
