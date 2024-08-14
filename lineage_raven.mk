@@ -14,7 +14,6 @@ MATRIXX_MAINTAINER := EinarG.
 MATRIXX_CHIPSET := TensorG1
 MATRIXX_BATTERY := 5000mAh
 MATRIXX_DISPLAY := 1440x3120
-<<<<<<< HEAD
 
 # Matrixx Flags
 WITH_GMS := true
@@ -28,9 +27,6 @@ TARGET_IS_PIXEL_6 := true
 TARGET_PIXEL_STAND_SUPPORTED := true
 TARGET_EXCLUDES_AUXIO := true
 TARGET_EXCLUDES_VIA := true
-=======
-WITH_GMS := true
->>>>>>> 6994c26 (raviole: add PixelParts)
 BUILD_GOOGLE_CONTACTS := true
 BUILD_GOOGLE_DIALER := true
 BUILD_GOOGLE_MESSAGE := true
@@ -52,8 +48,8 @@ TARGET_SCREEN_WIDTH := 1440
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=raven \
-    PRIVATE_BUILD_DESC="raven-user 14 AP2A.240705.004 11875680 release-keys"
+    PRIVATE_BUILD_DESC="raven-user 14 AP2A.240805.005.F1 12043167 release-keys"
 
-BUILD_FINGERPRINT := google/raven/raven:14/AP2A.240705.004/11875680:user/release-keys
+BUILD_FINGERPRINT := google/raven/raven:14/AP2A.240805.005.F1/12043167:user/release-keys
 
 $(call inherit-product, vendor/google/raven/raven-vendor.mk)
